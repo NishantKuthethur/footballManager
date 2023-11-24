@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        sidebar: 'rgba(17, 17, 17, 1)',
         neutral:{
           1: '#222222',
           2: '#2D2D2D',
