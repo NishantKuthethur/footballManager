@@ -28,7 +28,7 @@ export default {
           default: '#494949'
         }
       }
-    },
+    }
   },
   plugins: [],
 }
