@@ -16,7 +16,6 @@ function ContentHeader({isActive}) {
   };
 
   const handleNameChange = (e) => {
-    console.log(e.target.value);
     if(e.target.value.length > 0){
         setTeamName(e.target.value);
     }
@@ -45,7 +44,7 @@ function ContentHeader({isActive}) {
           </div>
         )}
       </div>
-      <SearchInput/>
+      {isActive('/roster') ? <SearchInput/> : null}
     </div>
   )
 }

@@ -9,7 +9,7 @@ export default function DynamicViewPort() {
 
   const isActive = (path) => location.pathname === path;
   return (
-    <div className="flex-1 relative p-10 bg-gradient-to-b from-neutral-800 to-neutral-900">
+    <div className="flex-1 flex flex-col gap-8 p-10 bg-gradient-to-b from-neutral-800 to-neutral-900">
         <ContentHeader isActive={isActive}/>
         <Routes>
             <Route path="/" element={<Navigate replace to={'/roster'}/>}/>
