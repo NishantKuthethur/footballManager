@@ -5,12 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import TextInput from './common/TextInput';
 import SearchInput from './SearchInput';
+import Button from './common/Button'
 
 function ContentHeader({isActive}) {
 
   const [isEditing, setIsEditing] = useState(false);
   const {teamName, setTeamName} = useStore();
-
+  const {showModal, setShowModal} = useStore();
+  //Edit team name functions
   const handleEditClick = () => {
     setIsEditing(true);
   };
@@ -28,6 +30,13 @@ function ContentHeader({isActive}) {
     setIsEditing(false);
   }
 
+  //Import button/modal functions
+
+  const openImportModal = () => {
+    setShowModal(true);
+  }
+
+
   return (
     <div className='flex justify-between'>
       <div className='flex flex-col'>
@@ -44,7 +53,8 @@ function ContentHeader({isActive}) {
           </div>
         )}
       </div>
-      {isActive('/roster') ? <SearchInput/> : null}
+      {isActive('/roster') ?<div className='flex gap-2 items-center'> <SearchInput/> <Button text={'Import Team'} type={'primary'} onClick={openImportModal}/></div>: null}
+      
     </div>
   )
 }

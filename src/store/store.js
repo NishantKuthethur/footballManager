@@ -6,4 +6,7 @@ export const useStore = create((set) => ({
 
   searchValue: '',
   setSearchValue: (val) => set({searchValue: val}),
+
+  showModal: false,
+  setShowModal: (isVisible) => set({showModal: isVisible}),
 }));

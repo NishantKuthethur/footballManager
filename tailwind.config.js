@@ -27,7 +27,10 @@ export default {
         borders: {
           default: '#494949'
         }
-      }
+      },
+      boxShadow: {
+        modal: '0px 12px 28px 0px rgba(22, 22, 22, 0.5)',
+      },
     }
   },
   plugins: [],

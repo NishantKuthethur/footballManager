@@ -52,9 +52,9 @@ const SearchInput = () => {
           type="text" 
           id="default-search" 
           value={inputValue}
-          className={`block w-full pl-10 pr-20  py-3 bg-transparent
+          className={`block w-full pl-10 pr-20  pt-3 pb-[11px] bg-transparent
           border border-solid border-borders-default 
-          rounded-lg outline-none focus:bg-transparent 
+          rounded-lg outline-none focus:bg-transparent h-[44px] text-[14px] leading-[21px] font-normal
           ${searchState===SearchInputState.Enabled ? "placeholder-texts-muted text-texts-muted" : (searchState===SearchInputState.Typing ? "text-texts-normal" : "text-texts-heading")}`} 
           placeholder="Find Player" 
           autoComplete='off'
