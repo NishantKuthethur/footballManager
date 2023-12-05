@@ -6,14 +6,12 @@ const buttonType = {
   s: 'secondary'
 }
 
-const Button = ({text, type, onClick}) => {
-  //const [buttonState, setButtonState] = useState('Enabled');
-  const disabledPrimaryButton = '';
-  const disabledSecondaryButton = '';
+const Button = ({text, type, onClick, placementStyle, isImportButton, importError, isDisabled = false}) => {
   
-  const commonStyle = 'rounded-[8px] w-fit h-[44px] px-5 pt-3 pb-[11px] text-[14px] leading-[21px]'
-  const primaryButton = `${commonStyle} text-texts-heading bg-primary-orange hover:bg-primary-orangeHover`;
-  const secondaryButton = ''
+  
+  const commonStyle = 'rounded-[8px] w-fit h-[44px] px-5 pt-3 pb-[11px] text-[14px] leading-[21px] font-medium';
+  const primaryButton = `${commonStyle} ${isDisabled ? 'bg-defaults-2 text-texts-disabled': 'bg-primary-orange hover:bg-primary-orangeHover text-texts-heading '} `;
+  const secondaryButton = `${commonStyle}  ${isImportButton ? 'border-l' : 'border'} ${importError ? 'border-primary-red' : 'border-borders-default'} text-texts-normal hover:text-texts-heading`;
   const buttonStyle = type === buttonType.p ? primaryButton : secondaryButton;
 
   const handleOnClick = () => {
@@ -21,7 +19,7 @@ const Button = ({text, type, onClick}) => {
   }
 
   return (
-    <button className={buttonStyle} onClick={handleOnClick}>
+    <button className={buttonStyle +' '+ placementStyle} onClick={handleOnClick} disabled={isDisabled}>
       {text}
     </button>
   )
@@ -30,7 +28,11 @@ const Button = ({text, type, onClick}) => {
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.string,
-  onClick: PropTypes.func
+  isDisabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  placementStyle: PropTypes.string,
+  isImportButton: PropTypes.bool,
+  importError: PropTypes.string
 }
 
 export default Button
