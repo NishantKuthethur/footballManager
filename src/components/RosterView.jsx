@@ -2,10 +2,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useStore } from '../store/store';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import ActionDialog from './Dialogs/ActionDialog';
-
+import {Edit, Action, Confirmation} from './Dialogs';
 const RosterView = () => {
-  const { searchValue, roster, setShowModal,showActionDialog, setShowActionDialog } = useStore(); 
+  const { 
+    searchValue, 
+    roster, 
+    setShowModal,
+    showActionDialog, 
+    setShowActionDialog ,
+    showConfirmationDialog,
+    showEditDialog
+  } = useStore(); 
   //const [activePlayer, setActivePlayer] = useState(null);
   const [dialogPosition, setDialogPosition] = useState({ x: 0, y: 0 });
   const filteredPlayers = roster.filter(player =>
@@ -34,7 +41,7 @@ const RosterView = () => {
 
   const handleActionButtonClick = (event) =>{
     const iconPos = event.currentTarget.getBoundingClientRect();
-    setDialogPosition({ x: iconPos.left, y: iconPos.top -15});
+    setDialogPosition({ x: iconPos.left, y: iconPos.top -20});
     setShowActionDialog(true);
   }
   return (
@@ -78,7 +85,9 @@ const RosterView = () => {
         </tbody>
       </table>
 
-      {showActionDialog ? <ActionDialog position={dialogPosition}/> : null} 
+      {showActionDialog ? <Action position={dialogPosition}/> : null}
+      {showConfirmationDialog ? <Confirmation/> : null}
+      {showEditDialog ? <Edit/> : null} 
     </div>
   );
 };

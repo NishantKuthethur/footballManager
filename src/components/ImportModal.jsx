@@ -4,7 +4,7 @@ import { useStore } from '../store/store'
 import FilePicker from './FilePicker'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
-import RosterSummary from './RosterSUmmary'
+import RosterSummary from './RosterSummary'
 
 const ImportModal = () => {
   const {

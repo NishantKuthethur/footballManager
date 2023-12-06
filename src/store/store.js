@@ -86,5 +86,11 @@ export const useStore = create((set) => ({
 
   //Dialog states
   showActionDialog:false,
-  setShowActionDialog: (isVisible) => set({showActionDialog: isVisible})
+  setShowActionDialog: (isVisible) => set({showActionDialog: isVisible}),
+
+  showConfirmationDialog: false,
+  setShowConfirmationDialog: (isVisible) => set({showConfirmationDialog: isVisible}),
+
+  showEditDialog: false,
+  setShowEditDialog: (isVisible) => set({showEditDialog: isVisible}),
 }));
