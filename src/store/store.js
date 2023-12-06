@@ -57,9 +57,6 @@ export const useStore = create((set) => ({
       // Check against the formation requirements
       for (const [position, requiredCount] of Object.entries(formation)) {
         const count = starterCounts[position] || 0;
-        console.log(position);
-        console.log(requiredCount);
-        console.log(count);
         if (count > requiredCount) {
           alert = { show: true, header: 'There are too many starters', message: `Your team has too many starters for one or more of the positions in the 4-3-3 formation.` };
           formationError = true;

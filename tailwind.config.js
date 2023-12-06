@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        cardNumber: 'rgba(58, 55, 49, 1)',
         sidebar: 'rgba(17, 17, 17, 1)',
         neutral:{
           1: '#222222',

@@ -4,7 +4,7 @@ import FormationOverview from "../components/FormationOverview"
 
 export default function ViewPort() {
   return (
-    <div className="w-[1226px] h-[605px] rounded-[8px] text-texts-normal  bg-neutral-2">
+    <div className=" w-[1226px] h-[680px] rounded-[8px] text-texts-normal  bg-neutral-2">
       <Routes>
             <Route path="/" element={<Navigate replace to={'/roster'}/>}/>
             <Route path="/roster" element={<RosterView/>}/>

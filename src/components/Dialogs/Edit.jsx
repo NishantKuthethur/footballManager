@@ -23,7 +23,7 @@ const Edit = () => {
           <FontAwesomeIcon icon={faClose} className='cursor-pointer py-1 px-[7px] text-[16px] leading-4 text-texts-normal' onClick={handleDialogClose}/>
         </div>
         <div className='flex flex-col h-[413px] w-[432px]'>
-          
+            
         </div>
         <div className='flex justify-end items-center'>
           <Button text='Edit Player' type='primary' isDisabled/>

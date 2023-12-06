@@ -45,37 +45,40 @@ const RosterView = () => {
     setShowActionDialog(true);
   }
   return (
-    <div className='px-4 py-[13px] max-h-[594px] overflow-y-auto no-scrollbar font-medium'>
+    <div className='px-4 py-[14px] md:h-[680px] h-[500px] font-medium'>
       <table className='table-fixed text-left min-w-full max-h-[594px] text-texts-normal'>
         <thead>
           <tr>
-            <th>Player Name</th>
-            <th>Jersey Number</th>
-            <th>Starter</th>
-            <th>Position</th>
-            <th>Height</th>
-            <th>Weight</th>
-            <th>Nationality</th>
-            <th>Appearances</th>
-            <th>Minutes Played</th>
+            <th className='w-[275px]'>Player Name</th>
+            <th className='w-[128.5px]'>Jersey Number</th>
+            <th className='w-[70.69px]'>Starter</th>
+            <th className='w-[118.43px]'>Position</th>
+            <th className='w-[68.85px]'>Height</th>
+            <th className='w-[100.06px]'>Weight</th>
+            <th className='w-[148.73px]'>Nationality</th>
+            <th className='w-[115.68px]'>Appearances</th>
+            <th className='w-[128.53px]'>Minutes Played</th>
             <th></th>
           </tr>
         </thead>
-        <tbody>
+        </table>
+        <div className='pb-[14px] md:h-[620px] h-[500px] font-medium overflow-y-auto no-scrollbar'>
+        <table className='md:h-[640px] h-[460px] '>
+        <tbody className='flex flex-col flex-wrap gap-2 w-[1193px]'>
           {filteredPlayers.map((player, index) => (
-            <tr className='' key={index}>
-              <td className='flex items-center' >
+            <tr className='flex flex-row' key={index}>
+              <td className='flex items-center w-[275px]' >
                 <img src={player['Flag Image']} alt="flag" style={{ width: '30px', marginRight: '10px' }} />
                 <span>{player["Player Name"]}</span>
               </td>
-              <td className=''>{player["Jersey Number"]}</td>
-              <td>{player["Starter"]}</td>
-              <td>{player["Position"]}</td>
-              <td>{player["Height"]}</td>
-              <td>{player["Weight"]}</td>
-              <td>{player["Nationality"]}</td>
-              <td>{player["Appearances"]}</td>
-              <td>{player["Minutes Played"]}</td>
+              <td className='flex items-center w-[128.5px]'>{player["Jersey Number"]}</td>
+              <td className='w-[70.69px]'>{player["Starter"]}</td>
+              <td className='w-[118.43px]'>{player["Position"]}</td>
+              <td className='w-[68.85px]'>{player["Height"]}</td>
+              <td className='w-[100.06px]'>{player["Weight"]}</td>
+              <td className='w-[148.73px]'>{player["Nationality"]}</td>
+              <td className='w-[115.68px]'>{player["Appearances"]}</td>
+              <td className='w-[128.53px]'>{player["Minutes Played"]}</td>
               <td className='text-[16px] leading-4 relative'>
                 <FontAwesomeIcon className='cursor-pointer' icon={faEllipsis} onClick={(event)=>handleActionButtonClick(event)}/>
                 
@@ -83,7 +86,9 @@ const RosterView = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+        </table>
+        </div>
+     
 
       {showActionDialog ? <Action position={dialogPosition}/> : null}
       {showConfirmationDialog ? <Confirmation/> : null}
