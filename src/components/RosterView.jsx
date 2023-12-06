@@ -45,8 +45,8 @@ const RosterView = () => {
     setShowActionDialog(true);
   }
   return (
-    <div className='px-4 py-[14px] md:h-[680px] h-[500px] font-medium'>
-      <table className='table-fixed text-left min-w-full max-h-[594px] text-texts-normal'>
+    <div className='px-4 py-[14px] md:h-[568px] h-[500px] font-medium'>
+      <table className='table-fixed text-left min-w-full max-h-[568px] text-texts-normal'>
         <thead>
           <tr>
             <th className='w-[275px]'>Player Name</th>
@@ -62,8 +62,8 @@ const RosterView = () => {
           </tr>
         </thead>
         </table>
-        <div className='pb-[14px] md:h-[620px] h-[500px] font-medium overflow-y-auto no-scrollbar'>
-        <table className='md:h-[640px] h-[460px] '>
+        <div className='pb-[14px] md:h-[540px] h-[500px] font-medium overflow-y-auto no-scrollbar'>
+        <table className=''>
         <tbody className='flex flex-col flex-wrap gap-2 w-[1193px]'>
           {filteredPlayers.map((player, index) => (
             <tr className='flex flex-row' key={index}>

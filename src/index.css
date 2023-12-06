@@ -5,6 +5,7 @@
 
 html, body {
     font-family: 'Poppins' !important;
+    overflow: hidden;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -26,8 +27,8 @@ td {
 }
 
 .overlay-background {
-    background-image: url('/src/assets/FieldOverlay.png');
-    background-size: cover; /* or contain, depending on what you need */
+    background-image: url('/src/assets/FieldOverlay1.png');
+    background-size: contain; /* or contain, depending on what you need */
     background-repeat: no-repeat;
     background-position: center;
     

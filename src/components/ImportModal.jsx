@@ -20,7 +20,6 @@ const ImportModal = () => {
 
   const handleRosterImport = () => {
     setRoster(parsedPlayers);
-    console.log(roster);
     setParsedPlayers([]);
     checkFormationStarters(); 
     setShowModal(false);

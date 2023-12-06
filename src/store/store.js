@@ -90,4 +90,8 @@ export const useStore = create((set) => ({
 
   showEditDialog: false,
   setShowEditDialog: (isVisible) => set({showEditDialog: isVisible}),
+
+  //Formation View
+  selectedPlayer: null,
+  setSelectedPlayer: (player) => set ({selectedPlayer: player})
 }));

@@ -41,7 +41,7 @@ function ContentHeader({isActive}) {
   const importButtonText = roster.length>0 ?'Re-Import Team' : 'Import Team';
   const importButtonType = roster.length>0 ? 'secondary' : 'primary';
   return (
-    <div className='flex justify-between mr-20'>
+    <div className='flex justify-between w-[1226px]'>
       <div className='flex flex-col'>
         <h2 className="text-primary-orange text-[12px] leading-[18px] font-medium">
         {isActive('/roster') && "Roster Details"}
