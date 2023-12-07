@@ -3,8 +3,7 @@ import { useStore } from "../store/store";
 export default function PlayerCard() {
 
   const {selectedPlayer} = useStore();
-  console.log(selectedPlayer);
-  const isGoalie = true;
+  
   return selectedPlayer ? (
       <div className='flex flex-col gap-6 h-[541px] w-[322px] rounded  bg-neutral-1 p-6'>
       <div className='flex justify-center items-center relative w-[274px] h-[258px]'>
