@@ -3,7 +3,7 @@ import Player from './Player';
 
 export default function FormationView() {
   
-  const {roster} = useStore();
+  const {roster, formationAlert} = useStore();
 
   const startingPlayers = roster.filter(player => player.Starter === "Yes");
 
@@ -59,7 +59,7 @@ export default function FormationView() {
     return { x: xPosition, y: yPosition };
   };
 
-  return (
+  return !formationAlert.show ? (
     <div className='relative overlay-background h-[541px] w-[808px] rounded'>
       {Object.entries(groupedPlayers).map(([role, players]) => (
       players.map((player, index) => (
@@ -70,6 +70,12 @@ export default function FormationView() {
         />
       ))
     ))}
+    </div>
+  )
+  :
+  (
+    <div className='relative overlay-background h-[541px] w-[808px] rounded'>
+      
     </div>
   )
 }

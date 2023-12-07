@@ -6,8 +6,6 @@ const Player = ({ player, position }) => {
     const handlePlayerSelection = () => {
       setSelectedPlayer(player);
     }
-    console.log(player.id);
-    console.log(selectedPlayer);
 
     if(selectedPlayer == null && player.id == 1){
       setSelectedPlayer(player);

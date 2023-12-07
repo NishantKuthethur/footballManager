@@ -12,7 +12,6 @@ const ImportModal = () => {
     setShowModal, 
     setRoster, 
     parsedPlayers, 
-    roster, 
     checkFormationStarters, 
     setParsedPlayers,
     setImportError

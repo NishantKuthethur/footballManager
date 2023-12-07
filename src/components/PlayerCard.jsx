@@ -2,9 +2,9 @@ import { useStore } from "../store/store";
 
 export default function PlayerCard() {
  
-  const {selectedPlayer} = useStore();
+  const {selectedPlayer, formationAlert} = useStore();
 
-  return selectedPlayer ? (
+  return selectedPlayer && !formationAlert.show ? (
       <div className='flex flex-col gap-6 h-[541px] w-[322px] rounded  bg-neutral-1 p-6'>
       <div className='flex justify-center items-center relative w-[274px] h-[258px]'>
         <h1 className='absolute h-[100px] w-10 text-[109.71px] font-semibold opacity-50 text-cardNumber leading-[100px] left-2 top-0'>{selectedPlayer["Jersey Number"]}</h1>
