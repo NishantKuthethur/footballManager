@@ -1,9 +1,9 @@
 import { useStore } from "../store/store";
 
 export default function PlayerCard() {
-
+ 
   const {selectedPlayer} = useStore();
-  
+
   return selectedPlayer ? (
       <div className='flex flex-col gap-6 h-[541px] w-[322px] rounded  bg-neutral-1 p-6'>
       <div className='flex justify-center items-center relative w-[274px] h-[258px]'>
@@ -14,7 +14,7 @@ export default function PlayerCard() {
           <div className='overlay'></div>
         </div>
         <h1 className='absolute h-8 w-fit top-[200px] left-0 text-white font-medium text-2xl leading-9'>{selectedPlayer["Player Name"]}</h1>
-        <h1 className='absolute h-[27px] w-[107px] top-[233px] left-0 text-primary-orange font-semibold text-[18px] leading-[27px] text-center'>{selectedPlayer.Position}</h1>
+        <h1 className='absolute h-[27px] w-[107px] top-[233px] left-0 text-primary-orange font-semibold text-[18px] leading-[27px]'>{selectedPlayer.Position}</h1>
       </div>
       <div className='flex justify-start gap-8 w-[274px] h-[47px]'>
         <div className='flex flex-col justify-between gap-2'>
@@ -59,7 +59,7 @@ export default function PlayerCard() {
             </div>
           ) :
           (
-            <div className='flex flex-row items-center justify-start gap-12'>
+            <div className='flex flex-row items-center justify-start gap-24'>
               <div className='flex flex-col'>
                 <div className=' text-primary-orange font-semibold text-[24px] leading-9'>{selectedPlayer.Goals}</div>
                 <div className=' text-texts-normal font-medium text-[12px] leading-[18px]'>{'Goals'}</div>
