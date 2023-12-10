@@ -11,14 +11,16 @@ const RosterView = () => {
     showActionDialog, 
     setShowActionDialog ,
     showConfirmationDialog,
-    showEditDialog
+    showEditDialog,
+    setActionForPlayer
   } = useStore(); 
   //const [activePlayer, setActivePlayer] = useState(null);
   const [dialogPosition, setDialogPosition] = useState({ x: 0, y: 0 });
   const filteredPlayers = roster.filter(player =>
     player["Player Name"]?.toLowerCase().includes(searchValue.toLowerCase())
   );
-
+  
+  
   if (roster.length === 0) {
     return (
       <div className='px-4 pt-[13px] h-full flex flex-col'>
@@ -39,10 +41,13 @@ const RosterView = () => {
     );
   }
 
-  const handleActionButtonClick = (event) =>{
+  
+
+  const handleActionButtonClick = (event, player) =>{
     const iconPos = event.currentTarget.getBoundingClientRect();
     setDialogPosition({ x: iconPos.left, y: iconPos.top -20});
     setShowActionDialog(true);
+    setActionForPlayer(player);
   }
   return (
     <div className='px-4 py-[14px] md:h-[568px] h-[500px] font-medium'>
@@ -80,7 +85,7 @@ const RosterView = () => {
               <td className='w-[115.68px]'>{player["Appearances"]}</td>
               <td className='w-[128.53px]'>{player["Minutes Played"]}</td>
               <td className='text-[16px] leading-4 relative'>
-                <FontAwesomeIcon className='cursor-pointer' icon={faEllipsis} onClick={(event)=>handleActionButtonClick(event)}/>
+                <FontAwesomeIcon className='cursor-pointer' icon={faEllipsis} onClick={(event)=>handleActionButtonClick(event,player)}/>
                 
               </td>
             </tr>

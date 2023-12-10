@@ -14,7 +14,6 @@ const ActionDialog = ({position}) => {
     };
 
     const handleDialogClose = () => {
-      console.log('close');
       setShowActionDialog(false);
     }
 
@@ -37,7 +36,7 @@ const ActionDialog = ({position}) => {
           <FontAwesomeIcon icon={faClose} className='cursor-pointer py-1 px-[7px] text-[16px] leading-4 text-texts-normal' onClick={handleDialogClose}/>
         </div>
         <div className="flex flex-col">
-          <div className='flex items-center py-2 gap-2' onClick={handleEditDialogOpen}>
+          <div className='flex items-center py-2 gap-2 cursor-pointer' onClick={handleEditDialogOpen}>
             <FontAwesomeIcon className='p-1 text-[16px] leading-4 text-texts-muted' icon={faPen}/>
             <span className='text-[14px] leading-[21px] text-texts-normal'>Edit Player</span>
           </div>

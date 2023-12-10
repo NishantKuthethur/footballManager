@@ -14,13 +14,13 @@ const TextInput = ({
   const [value, setValue] = useState(initialValue);
   const isFilled = value.length > 0;
   const dynamicStyle = disabled ? "" : (isFilled ? "text-texts-heading" : "text-texts-muted");
-  const dynamicClass = `form-control block bg-transparent h-fit w-fit px-4 py-[12px] rounded-[8px] border border-solid border-borders-default text-[14px] leading-[21px] focus:outline-none focus:border focus:border-solid focus:border-borders-default ${dynamicStyle}`;
+  const dynamicClass = `form-control block bg-transparent h-fit w-full px-4 py-[12px] rounded-[8px] border border-solid border-borders-default text-[14px] leading-[21px] focus:outline-none focus:border focus:border-solid focus:border-borders-default ${dynamicStyle}`;
   
   const handleChange = (e) => {
     const newValue = e.target.value;
     setValue(newValue);
     if(onChange){
-        onChange(e);
+        onChange(newValue);
     }
   };
 

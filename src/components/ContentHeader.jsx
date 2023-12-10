@@ -17,9 +17,9 @@ function ContentHeader({isActive}) {
     setIsEditing(true);
   };
 
-  const handleNameChange = (e) => {
-    if(e.target.value.length > 0){
-        setTeamName(e.target.value);
+  const handleNameChange = (name) => {
+    if(name.length > 0){
+        setTeamName(name);
     }
     else{
         setTeamName(teamName);
